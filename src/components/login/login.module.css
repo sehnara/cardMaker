@@ -1,0 +1,69 @@
+@value makerLightGrey,makerBlack, makerGreen, makerWhite from '..\..\common\colors.css';
+
+* {
+  text-align: center;
+  align-items: center;
+}
+/* container */
+.container {
+  width: 350px;
+  height: 300px;
+  margin: 300px auto;
+}
+/* header */
+.header {
+  height: 25%;
+  padding: 0.5rem;
+  background-color: makerGreen;
+}
+.logo {
+  width: 50px;
+  margin: 0.3em 0;
+}
+.title {
+  color: makerWhite;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+/* main */
+.main {
+  background-color: makerWhite;
+
+  display: flex;
+  flex-direction: column;
+
+  height: 55%;
+}
+.semiTitle {
+  font-weight: bold;
+  font-size: 1.5em;
+  padding: 1em;
+}
+
+button {
+  width: 90%;
+  height: 2em;
+  margin: 2px;
+  border-radius: 15px;
+  border: 2px solid makerGreen;
+  box-sizing: content-box;
+  background-color: makerWhite;
+  cursor: pointer;
+  font-weight: bold;
+}
+button:hover {
+  background-color: makerLightGrey;
+}
+
+/* footer */
+.footer {
+  background-color: makerGreen;
+  height: 15%;
+  line-height: 40px;
+  font-size: 0.8em;
+}
+
+.footerPara {
+  color: makerWhite;
+}

@@ -1,0 +1,9 @@
+@value mediaQuery: 62rem;
+
+@value buttonMargin:5rem;
+
+@value myRadius : 15px;
+
+/* 세부적으로 정리하면 더 좋다 */
+/* @value mediaQuery-tablet: 62rem;
+   @value mediaQuery-mobile: 62rem; */
