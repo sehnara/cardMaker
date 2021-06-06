@@ -1,0 +1,13 @@
+@value makerLightGrey,makerBlack, makerGreen, makerWhite from '..\..\common\colors.css';
+
+/* footer */
+.footer {
+  background-color: makerGreen;
+  height: 15%;
+  line-height: 40px;
+  font-size: 0.8em;
+}
+
+.footerPara {
+  color: makerWhite;
+}

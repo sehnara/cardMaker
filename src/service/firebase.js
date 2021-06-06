@@ -1,9 +1,12 @@
-  const firebaseConfig = {
-    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-    databaseURL : process.env.REACT_APP_FIREBASE_DB_URL,
-    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID    
-  };
+import firebase from 'firebase';
+  
+const firebaseConfig = {
+apiKey: "AIzaSyAGesZFwW4YXBYrUqkftPyvjnPnupgH69w",
+authDomain: "business-cardmaker-9e1ca.firebaseapp.com",
+databaseURL : "https://business-cardmaker-9e1ca.firebaseapp.com",
+projectId: "business-cardmaker-9e1ca"    
+};
 
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+// Initialize Firebase
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+export default firebaseApp;

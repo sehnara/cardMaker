@@ -1,30 +1,46 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import Header from '../header/header';
+import Footer from '../footer/footer';
 import styles from './login.module.css';
-import logo from '../../images/logo.png';
+import { useHistory } from 'react-router';
 
-const Login = (props) =>{
+const Login = ({authService}) =>{
+  const history = useHistory();
+  const goToMaker = userId =>{
+    history.push({
+      pathname : '/maker',
+      state : {id:userId}
+    });
+  };
+
+  const onLogin = (event) =>{
+    authService 
+      .login(event.currentTarget.textContent)
+      .then(data=>goToMaker(data.user.uid));
+  };
+
+  useEffect(()=>{
+    authService
+      .onAuthChange(user=>{
+      user && goToMaker(user.uid);
+    })
+  });
 
 
-    return(
-        <div className={styles.box}>
-            <div className={styles.container}>
-                <header className={styles.header}>
-                    <img className={styles.logo} src={logo} alt="logo" />             
-                    <h1 className = {styles.title}>Business Card Maker</h1>
-                </header>
 
-                <main className = {styles.main}>
-                    <h1 className = {styles.semiTitle}>Login</h1>
-                    <button className = {styles.loginGoogle}>Google</button>
-                    <button className = {styles.loginGitbub}>Github</button>
-                </main>
-
-                <footer className = {styles.footer}>
-                    <p className = {styles.footerPara}>Code your Dream</p>
-                </footer>
-            </div>
-        </div>
-    );
+  return(
+    <section className={styles.container}>
+      <Header/>
+      <section className={styles.main}>
+        <h3 className={styles.semiTitle}>Login</h3>
+        <ul className={styles.lists}>
+          <li><button onClick={onLogin}>Google</button></li>
+          <li><button onClick={onLogin}>Github</button></li>
+        </ul>
+      </section>
+      <Footer/>
+    </section>
+  );
 };
 
 export default Login;

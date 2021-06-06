@@ -3,36 +3,19 @@
 * {
   text-align: center;
   align-items: center;
+  list-style: none;
 }
 /* container */
 .container {
   width: 350px;
   height: 300px;
-  margin: 300px auto;
-}
-/* header */
-.header {
-  height: 25%;
-  padding: 0.5rem;
-  background-color: makerGreen;
-}
-.logo {
-  width: 50px;
-  margin: 0.3em 0;
-}
-.title {
-  color: makerWhite;
-  font-size: 1.4em;
-  font-weight: bold;
 }
 
 /* main */
 .main {
   background-color: makerWhite;
-
   display: flex;
   flex-direction: column;
-
   height: 55%;
 }
 .semiTitle {
@@ -40,7 +23,9 @@
   font-size: 1.5em;
   padding: 1em;
 }
-
+.lists {
+  width: 100%;
+}
 button {
   width: 90%;
   height: 2em;
@@ -54,16 +39,4 @@ button {
 }
 button:hover {
   background-color: makerLightGrey;
-}
-
-/* footer */
-.footer {
-  background-color: makerGreen;
-  height: 15%;
-  line-height: 40px;
-  font-size: 0.8em;
-}
-
-.footerPara {
-  color: makerWhite;
 }
