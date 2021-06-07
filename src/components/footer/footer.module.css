@@ -2,9 +2,11 @@
 
 /* footer */
 .footer {
+  width: 100%;
+
   background-color: makerGreen;
-  height: 15%;
-  line-height: 40px;
+  height: 4em;
+  line-height: 4em;
   font-size: 0.8em;
 }
 

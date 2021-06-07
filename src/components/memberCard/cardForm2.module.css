@@ -1,0 +1,69 @@
+.container {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: 1em;
+  padding: 2em;
+
+  background-color: blueviolet;
+  border-radius: 50px;
+  max-width: 50rem;
+  box-shadow: 6px 6px 8px 0px rgba(217, 217, 217, 1);
+}
+.container.dark {
+  background-color: darkslategrey;
+  color: aliceblue;
+}
+.container.light {
+  background-color: bisque;
+  color: darkslateblue;
+}
+.container.pink {
+  background-color: palevioletred;
+  color: azure;
+}
+
+.image {
+  width: 10em;
+  height: 10em;
+  padding: 1em;
+
+  border-radius: 50%;
+}
+
+.text {
+  width: 100%;
+  margin-left: 3em;
+}
+
+.name {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: left;
+}
+.company {
+  width: 20em;
+
+  margin-top: 0.2em;
+  text-align: left;
+  padding-bottom: 0.5em;
+}
+.company::after {
+  content: "";
+  display: block;
+  width: 90%;
+  height: 2px;
+  background-color: burlywood;
+  transform: translateY(0.5em);
+}
+.details {
+  text-align: left;
+  margin-top: 1em;
+}
+
+.message {
+  text-align: left;
+  margin-top: 0.8em;
+
+  font-size: 1.2em;
+}

@@ -26,8 +26,6 @@ const Login = ({authService}) =>{
     })
   });
 
-
-
   return(
     <section className={styles.container}>
       <Header/>

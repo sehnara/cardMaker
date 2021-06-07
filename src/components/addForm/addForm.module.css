@@ -1,0 +1,50 @@
+.form {
+  width: 100%;
+
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  margin-bottom: 1em;
+}
+
+.input,
+.textarea,
+.select,
+.button,
+.fileInput {
+  font-size: 0.8rem;
+  width: 100%;
+  border: 0;
+  padding: 0.5em;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  background-color: whitesmoke;
+  text-align: left;
+}
+.fileInput {
+  padding: 0;
+  display: flex;
+  flex: 1 1 50%;
+}
+.input1 {
+  width: 100%;
+  display: flex;
+  flex: 1 1 30%;
+}
+.input2 {
+  width: 100%;
+  display: flex;
+  flex: 1 1 30%;
+}
+
+.input:focus,
+.textarea:focus,
+.select:focus,
+.button:focus {
+  outline: 0;
+}
+
+.textarea {
+  text-align: left;
+  height: 5em;
+  flex-basis: 100%;
+}

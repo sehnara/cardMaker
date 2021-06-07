@@ -1,0 +1,19 @@
+.section {
+  flex-basis: 50%;
+  box-sizing: border-box;
+  border-right: 2px solid #e8e7e6;
+
+  width: 90%;
+  height: 100%;
+}
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  padding: 0.5em;
+}
+
+@media (max-width: 1234px) {
+  .section {
+    border-right: none;
+  }
+}
