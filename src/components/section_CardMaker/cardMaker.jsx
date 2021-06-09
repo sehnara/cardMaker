@@ -3,7 +3,7 @@ import AddForm from '../addForm/addForm';
 import CardForm1 from '../memberCard/cardForm1';
 import styles from './cardMaker.module.css';
 
-const CardMaker = ({member,addMember}) =>{
+const CardMaker = ({member,addMember,deleteMember}) =>{
     return(
         <div className={styles.section}>
             <h1 className={styles.title}>Card Maker</h1>
@@ -12,6 +12,7 @@ const CardMaker = ({member,addMember}) =>{
                     return <CardForm1 
                         key = {memb.id}
                         member = {memb}
+                        deleteMember = {deleteMember}
                     />
                 })                
             }     

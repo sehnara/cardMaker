@@ -9,6 +9,7 @@ const CardPreview = ({member}) => {
           {
             member.map(memb=>{
               return <CardForm2
+                key = {memb.id}
                 member = {memb}
               />
             })

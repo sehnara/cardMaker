@@ -51,6 +51,19 @@ const Maker = ({authService}) => {
     setMember(updated);
   }
 
+  const deleteMember= d_member =>{
+    const memb = [...member];
+    const updated = memb.filter(m =>{
+      return m.id !== d_member.id
+    });
+    setMember(updated);
+  };
+
+  const updateMember=member =>{
+    const memb = [...member];
+    
+  }
+
   const onLogout =()=>{
       authService.logout();
   };
@@ -70,6 +83,7 @@ const Maker = ({authService}) => {
             <CardMaker
               member ={member}
               addMember = {addMember}
+              deleteMember = {deleteMember}
             />
             <CardPreview
               member ={member}
