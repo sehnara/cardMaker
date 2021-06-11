@@ -7,8 +7,8 @@ import CardPreview from '../section_CardPreview/cardPreview';
 import styles from './maker.module.css';
 
 const Maker = ({authService}) => {
-  const [member, setMember] = useState([
-      {
+  const [member, setMember] = useState({
+      '1' :  {
         id:'1',
         name : 'sehoon',
         company : 'Google',
@@ -19,7 +19,7 @@ const Maker = ({authService}) => {
         fileName:'sehoon',
         fileURL:null
       },
-      {
+      '2' : {
         id:'2',
         name : 'tomioka chizu',
         company : 'hayart hotel',
@@ -30,7 +30,7 @@ const Maker = ({authService}) => {
         fileName:'sehoon',
         fileURL:null
       },
-      {
+      '3' : {
         id:'3',
         name : 'hyunna',
         company : 'Korea',
@@ -41,28 +41,26 @@ const Maker = ({authService}) => {
         fileName:'sehoon',
         fileURL:null
       }
-    ]
+    }
   );
  
   const history = useHistory();
 
-  const addMember=(newMember)=>{
-    const updated = [...member, newMember];
-    setMember(updated);
-  }
-
-  const deleteMember= d_member =>{
-    const memb = [...member];
-    const updated = memb.filter(m =>{
-      return m.id !== d_member.id
+  const addOrUpdateMember= memb =>{    
+    setMember(member => {
+      const updated = {...member};
+      updated[memb.id] = memb;
+      return updated
     });
-    setMember(updated);
   };
 
-  const updateMember=member =>{
-    const memb = [...member];
-    
-  }
+  const deleteMember=mb=>{    
+    setMember(member=>{
+      const updated = {...member};
+      delete updated[mb.id];
+      return updated;
+    });
+  };  
 
   const onLogout =()=>{
       authService.logout();
@@ -82,8 +80,9 @@ const Maker = ({authService}) => {
           <div className={styles.container}>
             <CardMaker
               member ={member}
-              addMember = {addMember}
+              addMember = {addOrUpdateMember}
               deleteMember = {deleteMember}
+              updateMember = {addOrUpdateMember}
             />
             <CardPreview
               member ={member}

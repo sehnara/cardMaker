@@ -7,10 +7,10 @@ const CardPreview = ({member}) => {
         <div className={styles.section}>
           <h1 className={styles.title}>Card Preview</h1>
           {
-            member.map(memb=>{
+            Object.keys(member).map(key=>{
               return <CardForm2
-                key = {memb.id}
-                member = {memb}
+                key = {key}
+                member = {member[key]}
               />
             })
           }

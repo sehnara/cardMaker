@@ -3,7 +3,7 @@ import Button from '../button/button';
 import ImageInputFile from '../image_input_file/imageInputFile';
 import styles from './cardForm1.module.css';
 
-const CardForm1 = ({member, deleteMember}) => {
+const CardForm1 = ({member, updateMember, deleteMember}) => {
   const nameRef = useRef();
   const companyRef = useRef();
   const themeRef = useRef();
@@ -11,21 +11,23 @@ const CardForm1 = ({member, deleteMember}) => {
   const emailRef = useRef();
   const messageRef = useRef();
 
+  const onChange=(event)=>{
+    if(event.currentTarget ===null){
+      return null;
+    }else{
+      event.preventDefault();
+    }
+    updateMember({
+      ...member,
+      [event.currentTarget.name] : event.currentTarget.value // key : value
+    })
+
+  }
   const {name, company, theme, title, email, message, fileName, fileURL} = member;
   const onSubmit =(event)=>{
     event.preventDefault();
     deleteMember(member);
   }
-
-  function updateData(){
-    name = nameRef 
-    company = companyRef 
-    theme = themeRef 
-    title = titleRef 
-    email = emailRef 
-    message = messageRef 
-  }
-  updateData();
 
   return(
       <form className={styles.form}>

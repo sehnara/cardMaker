@@ -3,16 +3,17 @@ import AddForm from '../addForm/addForm';
 import CardForm1 from '../memberCard/cardForm1';
 import styles from './cardMaker.module.css';
 
-const CardMaker = ({member,addMember,deleteMember}) =>{
+const CardMaker = ({member,addMember, updateMember, deleteMember}) =>{
     return(
         <div className={styles.section}>
             <h1 className={styles.title}>Card Maker</h1>
             {
-                member.map((memb)=>{
+                Object.keys(member).map((key)=>{
                     return <CardForm1 
-                        key = {memb.id}
-                        member = {memb}
+                        key = {key}
+                        member = {member[key]}
                         deleteMember = {deleteMember}
+                        updateMember = {updateMember}
                     />
                 })                
             }     
