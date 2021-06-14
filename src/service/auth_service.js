@@ -17,6 +17,15 @@ class AuthService{ // 로그인 또는 로그아웃같은 authetication 관련 �
             onUserChanged(user);
         })
     };
+
+    // writeData(userId, members){
+    //     firebaseApp.database().ref('/users/' + userId)
+    //     .set(members);
+    // }
+    // readData(){
+    //     firebaseApp.database().ref('/users/' + userId)
+    //     .set(members);
+    // }
 }
 
 export default AuthService;

@@ -9,6 +9,7 @@
   width: 100%;
   background-color: white;
   display: flex;
+  min-height: 0;
 }
 @media screen and (max-width: 1234px) {
   .container {

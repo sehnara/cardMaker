@@ -2,7 +2,7 @@
   flex-basis: 50%;
   box-sizing: border-box;
   border-right: 2px solid #e8e7e6;
-
+  overflow-y: auto;
   width: 90%;
   height: 100%;
 }

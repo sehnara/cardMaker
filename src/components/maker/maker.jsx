@@ -6,52 +6,21 @@ import CardMaker from '../section_CardMaker/cardMaker';
 import CardPreview from '../section_CardPreview/cardPreview';
 import styles from './maker.module.css';
 
-const Maker = ({authService, FileInput}) => {
-  const [member, setMember] = useState({
-      '1' :  {
-        id:'1',
-        name : 'sehoon',
-        company : 'Google',
-        theme : 'light',
-        title : 'fullstack Developer',
-        email : 'gsh723@naver.com',
-        message :'you are the best',
-        fileName:'sehoon',
-        fileURL:null
-      },
-      '2' : {
-        id:'2',
-        name : 'tomioka chizu',
-        company : 'hayart hotel',
-        theme : 'dark',
-        title : 'hotelier',
-        email : 'cihzu@naver.com',
-        message :'you are good!',
-        fileName:'sehoon',
-        fileURL:null
-      },
-      '3' : {
-        id:'3',
-        name : 'hyunna',
-        company : 'Korea',
-        theme : 'pink',
-        title : 'hangjung',
-        email : 'hyunna@naver.com',
-        message :'you are so Good!',
-        fileName:'sehoon',
-        fileURL:null
-      }
-    }
-  );
- 
+const Maker = ({authService, FileInput,cardRepository}) => {
   const history = useHistory();
+  const historyState = history?.location?.state;
+  const [member, setMember] = useState({});
+  const [userId, setUserId] = useState(historyState&&historyState.id);
+
+  
 
   const addOrUpdateMember= memb =>{    
     setMember(member => {
       const updated = {...member};
-      updated[memb.id] = memb;
-      return updated
+      updated[memb.id] = memb;      
+      return updated;
     });
+    cardRepository.saveCard(userId, memb);    
   };
 
   const deleteMember=mb=>{    
@@ -60,6 +29,7 @@ const Maker = ({authService, FileInput}) => {
       delete updated[mb.id];
       return updated;
     });
+    cardRepository.removeCard(userId, mb);    
   };  
 
   const onLogout =()=>{
@@ -68,7 +38,9 @@ const Maker = ({authService, FileInput}) => {
 
   useEffect(()=>{
     authService.onAuthChange(user=>{
-      if(!user){
+      if(user){
+        setUserId(user.uid);
+      }else{
         history.push('/');
       }
     });
