@@ -2,6 +2,8 @@
   width: 100%;
   height: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .input {
@@ -11,7 +13,6 @@
 .button {
   width: 100%;
   height: 38px;
-  background-color: lightgray;
   font-weight: bold;
   cursor: pointer;
   border: 0;
@@ -20,7 +21,31 @@
 
   border-radius: 0;
 }
+.pink {
+  background-color: lightcoral;
+}
+.gray {
+  background-color: lightgray;
+}
 
 .button:hover {
   opacity: 0.8;
+}
+
+.loading {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  border: 3px solid black;
+  border-top: 1px solid lightpink;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
