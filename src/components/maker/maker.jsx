@@ -6,7 +6,7 @@ import CardMaker from '../section_CardMaker/cardMaker';
 import CardPreview from '../section_CardPreview/cardPreview';
 import styles from './maker.module.css';
 
-const Maker = ({authService}) => {
+const Maker = ({authService, FileInput}) => {
   const [member, setMember] = useState({
       '1' :  {
         id:'1',
@@ -79,6 +79,7 @@ const Maker = ({authService}) => {
           <Header onLogout = {onLogout}/>
           <div className={styles.container}>
             <CardMaker
+              FileInput ={FileInput}
               member ={member}
               addMember = {addOrUpdateMember}
               deleteMember = {deleteMember}
